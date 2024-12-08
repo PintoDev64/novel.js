@@ -1,0 +1,37 @@
+{
+  "name": "@noveljs/core",
+  "version": "0.0.1",
+  "description": "Nucleo del motor NovelJs",
+  "main": "./dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node --run build && node .",
+    "test": "node ./dist/test/index.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PintoDev64/novel.js.git"
+  },
+  "keywords": [
+    "javascript",
+    "visual",
+    "novel",
+    "core",
+    "library",
+    "noveljs"
+  ],
+  "author": "PintoDev64",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PintoDev64/novel.js/issues"
+  },
+  "homepage": "https://github.com/PintoDev64/novel.js#readme",
+  "devDependencies": {
+    "@types/electron": "^1.4.38",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^22.10.1",
+    "electron": "^33.2.1",
+    "typescript": "^5.7.2"
+  }
+}

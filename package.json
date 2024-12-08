@@ -1,0 +1,48 @@
+{
+  "name": "novel.js",
+  "version": "0.0.1",
+  "description": "Colecccion de librerias para el motor JavaScriptNovel",
+  "main": "./dist/test/index.test.js",
+  "author": {
+    "name": "PintoDev64",
+    "email": "joan.pinto.dev@gmail.com"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "tsc && node --run global:test",
+    "global:test": "cls && node .",
+    "core:test": "cls && npm run test -w packages/core",
+    "core:start": "cls && npm run start -w packages/core"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PintoDev64/novel.js.git"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/cli",
+      "packages/core",
+      "packages/manager",
+      "packages/compiler",
+      "packages/components",
+      "packages/vscode"
+    ]
+  },
+  "keywords": [
+    "javascript",
+    "visual",
+    "novel",
+    "editor",
+    "library",
+    "noveljs"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PintoDev64/novel.js/issues"
+  },
+  "homepage": "https://github.com/PintoDev64/novel.js#readme",
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "typescript": "^5.7.2"
+  }
+}

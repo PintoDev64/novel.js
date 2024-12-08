@@ -1,0 +1,48 @@
+name: Reporte de Errores
+description: Guia para reportar errores.
+title: "[Bug]: "
+labels: ["bug"]
+projects: ["PintoDev64/11"]
+body:
+  - type: textarea
+    id: context
+    attributes:
+      label: ¿Cual es el error/problema?
+      description: Proporciona informacion sobre el "que" y "como" se creo el error
+      placeholder: "Cuando inicio la aplicacion.....\nestos son los pasos:"
+    validations:
+      required: true
+  - type: dropdown
+    id: os
+    attributes:
+      label: ¿En que sistema operativo presento el error?
+      multiple: false
+      options:
+        - Windows
+        - MacOs
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Registros de aplicacion
+      description: Se crean registros dependiendo las acciones o procesos ejecutados
+      render: shell
+    validations:
+      required: false
+  - type: input
+    id: contact
+    attributes:
+      label: Detalles de contacto
+      description: En caso de que se requiera mas informacion de su parte, usaremos la informacion proporcionada (solo se usara en casos especificos para resolver un problema)
+      placeholder: ej. email@example.com
+    validations:
+      required: false
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Codigo de Conducta
+      description: Al subir este formulario, usted acepta las condiciones de nuestro [Codigo de Conducta](https://example.com).
+      options:
+        - label: Estoy de acuerod en seguir el codigo de conducta del proyecto
+          required: true
