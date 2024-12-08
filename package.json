@@ -9,10 +9,12 @@
   },
   "type": "module",
   "scripts": {
-    "test": "tsc && node --run global:test",
     "global:test": "cls && node .",
+
     "core:test": "cls && npm run test -w packages/core",
-    "core:start": "cls && npm run start -w packages/core"
+    "core:build": "cls && npm run build -w packages/core",
+    "core:start": "cls && npm run start -w packages/core",
+    "core:electron": "cls && npm run aplication -w packages/core"
   },
   "repository": {
     "type": "git",
@@ -40,9 +42,5 @@
   "bugs": {
     "url": "https://github.com/PintoDev64/novel.js/issues"
   },
-  "homepage": "https://github.com/PintoDev64/novel.js#readme",
-  "devDependencies": {
-    "@types/node": "^22.10.1",
-    "typescript": "^5.7.2"
-  }
+  "homepage": "https://github.com/PintoDev64/novel.js#readme"
 }

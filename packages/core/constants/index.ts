@@ -4,9 +4,20 @@ export const Global: spaceConstants.Global = {
     searchSource: resolve("../test")
 }
 
+export const Default: spaceConstants.Default = {
+    InPort: 2004,
+    OutPort: 2345
+}
+
 export const Electron: spaceConstants.Electron = {
     defaultConfig: {
-        
+        width: 800,
+        height: 600,
+        minWidth: 800,
+        minHeight: 600,
+        webPreferences: {
+            devTools: true
+        }
     }
 }
 
@@ -18,7 +29,8 @@ export const Core: spaceConstants.Core = {
             source: Global.searchSource
         },
         api: {
-            port: 2345
+            inPort: Default.InPort,
+            outPort: Default.OutPort
         }
     }
 }

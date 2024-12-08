@@ -1,31 +1,43 @@
-import { app, BrowserWindow } from "electron";
-import { Electron } from "../constants/index.js";
+import { BrowserWindow } from "electron";
+// Constants
+import { Default, Electron } from "../constants/index.js";
+// Classes
+import ElectronEvents from "./events.js";
+import GlobalState from "./core.js";
 
-class ElectronClass implements Classes.ElectronContext {
+class ElectronClass extends ElectronEvents implements Classes.ElectronContext {
     private static instance: ElectronClass | null = null;
     private window: Electron.BrowserWindow | null = null;
     private config: Classes.Config = Electron.defaultConfig;
 
-    private constructor() { }
+    private constructor() { super() }
 
     /**
      * Obtiene la instancia unica de electron
      */
-    static getInstance(): void {
+    static getInstance(): ElectronClass {
         if (!ElectronClass.instance) ElectronClass.instance = new ElectronClass();
-        ElectronClass.instance
+        return ElectronClass.instance
     }
 
-    startWindow(): void {
+    startWindow() {
+        const { api } = GlobalState.getState()
         this.window = new BrowserWindow(this.config)
+        this.window.loadURL(`http://localhost:${api?.inPort ?? Default.InPort}`)
     }
 
-    startGameEvents(): void {
-        
+    getWindow() {
+        return this.window
     }
 
-    startDevelopmentEvents(): void {
-        
+    startGameEvents() {
+        if (!this.window) return;
+        this.getGameEvents(this.window)
+    }
+
+    startDevelopmentEvents() {
+        if (!this.window) return;
+        this.getDevelopmentEvents(this.window)
     }
 }
 

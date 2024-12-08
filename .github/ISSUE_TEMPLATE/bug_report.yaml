@@ -4,14 +4,6 @@ title: "[Bug]: "
 labels: ["bug"]
 projects: ["PintoDev64/11"]
 body:
-  - type: textarea
-    id: context
-    attributes:
-      label: ¿Cual es el error/problema?
-      description: Proporciona informacion sobre el "que" y "como" se creo el error
-      placeholder: "Cuando inicio la aplicacion.....\nestos son los pasos:"
-    validations:
-      required: true
   - type: dropdown
     id: os
     attributes:
@@ -20,6 +12,14 @@ body:
       options:
         - Windows
         - MacOs
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: ¿Cual es el error/problema?
+      description: Proporciona informacion sobre el "que" y "como" se creo el error
+      placeholder: "Cuando inicio la aplicacion.....\nestos son los pasos:"
     validations:
       required: true
   - type: textarea

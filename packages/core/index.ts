@@ -1,24 +1,6 @@
-import { readFileSync } from "node:fs";
-import GlobalState from "./global/core.js"
-import { resolve } from "node:path";
+import { app } from "electron";
+import ElectronInstance from "./global/electron.js";
 
-function ExecuteSuscription(state: any) {
-    console.log(state);
-}
-
-GlobalState.suscribe(ExecuteSuscription);
-
-const { compiler } = GlobalState.getState()
-
-console.log(resolve());
-
-
-const FileURl = resolve(compiler?.source ?? "test")
-
-const fileData = readFileSync(FileURl, { encoding: 'utf-8' })
-
-console.log(fileData);
-
-export {
-    GlobalState
-}
+app.whenReady()
+    .then(() => ElectronInstance.startWindow())
+    .catch(err => console.log(err))

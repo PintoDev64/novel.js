@@ -6,12 +6,18 @@ declare namespace Core {
             source?: string;
         }
         api?: {
-            port?: number;
+            inPort?: number;
+            outPort?: number;
         }
     }
 }
 
 declare namespace Classes {
+    /* ------| ElectronEvents |------ */
+    interface ElectronEvents {
+        getGameEvents(window: Electron.BrowserWindow): void;
+        getDevelopmentEvents(window: Electron.BrowserWindow): void;
+    }
     /* ------| ElectronContext |------ */
     type Config = Electron.BrowserWindowConstructorOptions;
     interface ElectronContext {
@@ -22,11 +28,15 @@ declare namespace Classes {
         /**
          * Carga los eventos de juego en la vista
          */
-        startGameEvents(): void
+        startGameEvents(): void;
         /**
          * Carga los eventos de desarrollo en la vista
          */
-        startDevelopmentEvents(): void
+        startDevelopmentEvents(): void;
+        /**
+         * Retorna la ventana de juego
+         */
+        getWindow(): Electron.BrowserWindow | null;
     }
     /* ------| GlobalContext |------ */
     type Listener = (state: Core.defaultConfig) => void;
@@ -38,13 +48,17 @@ declare namespace Classes {
 }
 
 declare namespace spaceConstants {
+    interface Default {
+        InPort: number;
+        OutPort: number;
+    }
     interface Global {
-        searchSource: string
+        searchSource: string;
     }
     interface Electron {
         defaultConfig: Electron.BrowserWindowConstructorOptions;
     }
     interface Core {
-        defaultConfig: Core.defaultConfig
+        defaultConfig: Core.defaultConfig;
     }
 }
