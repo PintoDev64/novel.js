@@ -1,7 +1,8 @@
 import { resolve } from "node:path";
+import { cwd } from "node:process";
 
 export const Global: spaceConstants.Global = {
-    searchSource: resolve("../test")
+    scriptSource: resolve(cwd(), "src/scripts")
 }
 
 export const Default: spaceConstants.Default = {
@@ -26,7 +27,7 @@ export const Core: spaceConstants.Core = {
         interactive: false,
         compiler: {
             debugging: true,
-            source: Global.searchSource
+            source: Global.scriptSource
         },
         api: {
             inPort: Default.InPort,

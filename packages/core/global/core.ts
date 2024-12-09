@@ -33,6 +33,6 @@ class CoreContext implements Classes.CoreContext {
     }
 }
 
-const GlobalState = new CoreContext(Core.defaultConfig)
+const CoreState = new CoreContext(Core.defaultConfig)
 
-export default GlobalState
+export default CoreState

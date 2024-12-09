@@ -3,12 +3,16 @@
   "version": "0.0.1",
   "description": "Nucleo del motor NovelJs",
   "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": ""
+  },
   "type": "module",
   "scripts": {
     "build": "tsc",
     "start": "node --run build && node .",
     "aplication": "node --run build && electron .",
-    "test": "node ./dist/test/index.test.js"
+    "test": "node ./bin/noveljs.js"
   },
   "repository": {
     "type": "git",

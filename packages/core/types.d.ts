@@ -53,7 +53,7 @@ declare namespace spaceConstants {
         OutPort: number;
     }
     interface Global {
-        searchSource: string;
+        scriptSource: string;
     }
     interface Electron {
         defaultConfig: Electron.BrowserWindowConstructorOptions;

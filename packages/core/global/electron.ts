@@ -3,7 +3,7 @@ import { BrowserWindow } from "electron";
 import { Default, Electron } from "../constants/index.js";
 // Classes
 import ElectronEvents from "./events.js";
-import GlobalState from "./core.js";
+import CoreState from "./core.js";
 
 class ElectronClass extends ElectronEvents implements Classes.ElectronContext {
     private static instance: ElectronClass | null = null;
@@ -21,7 +21,7 @@ class ElectronClass extends ElectronEvents implements Classes.ElectronContext {
     }
 
     startWindow() {
-        const { api } = GlobalState.getState()
+        const { api } = CoreState.getState()
         this.window = new BrowserWindow(this.config)
         this.window.loadURL(`http://localhost:${api?.inPort ?? Default.InPort}`)
     }
